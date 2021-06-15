@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import data from './data';
+import Question from './Question';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div className="container bg-light my-5 py-3 rounded">
+            <h1 id="title" className="text-center">Questions And Answers</h1>
+            {data.map((element, index)=>{
+                return <Question key={index} title={element.title} info={element.info} />
+            })}
+        </div>
+    )
 }
 
 export default App;
